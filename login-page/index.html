@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="login-page">
+    <div class="login-card">
+      <header class="login-header">
+        <div class="logo" aria-hidden="true">G</div>
+        <h1>欢迎回来</h1>
+        <p class="subtitle">请登录您的账户以继续</p>
+      </header>
+
+      <form id="loginForm" class="login-form" novalidate>
+        <div class="form-group">
+          <label for="username">用户名</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="请输入用户名"
+            autocomplete="username"
+            required
+          >
+          <span class="error-message" id="usernameError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="password">密码</label>
+          <div class="password-wrapper">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="请输入密码"
+              autocomplete="current-password"
+              required
+            >
+            <button type="button" class="toggle-password" id="togglePassword" aria-label="显示密码">
+              <svg class="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+          <span class="error-message" id="passwordError"></span>
+        </div>
+
+        <div class="form-options">
+          <label class="checkbox-label">
+            <input type="checkbox" id="rememberMe" name="rememberMe">
+            <span>记住我</span>
+          </label>
+          <a href="#" class="forgot-link">忘记密码？</a>
+        </div>
+
+        <div class="alert" id="formAlert" role="alert" hidden></div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          <span class="btn-text">登录</span>
+          <span class="btn-loader" hidden></span>
+        </button>
+      </form>
+
+      <footer class="login-footer">
+        <p>还没有账户？<a href="#">立即注册</a></p>
+      </footer>
+    </div>
+  </main>
+
+  <script src="login.js"></script>
+</body>
+</html>
